@@ -192,6 +192,13 @@
             flex: 2;
         }
 
+        .country-left {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
         .country-image {
             flex: 1;
             text-align: center;
@@ -200,10 +207,52 @@
         .country-image img {
             max-width: 100%;
             height: auto;
-            max-height: 280px;
+            max-height: 300px;
             border-radius: 10px;
             border: 1px solid rgba(0, 0, 0, 0.1);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .stats-inline {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 65px;
+        }
+
+        .stat-card-small {
+            background: #F0B90B;
+            color: #000000;
+            padding: 15px 12px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            flex: 1;
+            min-width: 100px;
+        }
+
+        .stat-card-small:hover {
+            transform: translateY(-3px);
+            background: #F0B90B;
+            color: #000000;
+        }
+
+        .stat-number-small {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 2.2rem;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 0;
+            color: #000000;
+        }
+
+        .stat-label-small {
+            font-size: 0.95rem;
+            opacity: 1;
+            font-weight: 500;
+            color: #000000;
         }
 
         .country-text p {
@@ -717,6 +766,19 @@
                 flex-direction: column;
                 gap: 15px;
             }
+
+            .country-left {
+                gap: 15px;
+            }
+
+            .stats-inline {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .stat-card-small {
+                min-width: auto;
+            }
             
             .individual-story {
                 flex-direction: column;
@@ -1013,6 +1075,86 @@
                 width: 16px;
             }
         }
+
+        /* 为iPhone 16等小屏幕设备添加专门的媒体查询 */
+        @media (max-width: 480px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .header h1 {
+                font-size: 1.6rem;
+            }
+            
+            .header .charity-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .header .quote {
+                font-size: 1rem;
+                padding-left: 15px;
+            }
+            
+            .section {
+                padding: 15px;
+                margin-bottom: 15px;
+            }
+            
+            .section h2 {
+                font-size: 2rem;
+                gap: 10px;
+            }
+            
+            .country-nav-item {
+                min-height: 160px;
+                width: 160px;
+                padding: 4px;
+            }
+            
+            .country-nav-image {
+                width: 150px;
+                height: 130px;
+            }
+            
+            .country-nav-content h4 {
+                font-size: 0.9rem;
+            }
+            
+            .success-story {
+                padding: 15px;
+            }
+            
+            .success-story-image {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+            }
+            
+            .stat-label {
+                font-size: 1rem;
+            }
+        }
+
+        /* 为极小屏幕（小于360px）的设备 */
+        @media (max-width: 360px) {
+            .country-nav {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .country-nav-item {
+                width: 100%;
+                max-width: 280px;
+                min-height: 140px;
+            }
+            
+            .header h1 {
+                font-size: 1.4rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1039,7 +1181,7 @@
 
             </div>
             <div class="highlight-box">
-                <p>CZ supports over <strong>69,360 beneficiaries</strong> across four countries. With CZ's help, we've provided essential meals, food baskets, and nutrition to strengthen communities. We've supported life-saving surgeries and advanced community health for lasting change. <br><br>
+                <p>CZ's impact has reached over <strong>69,360 beneficiaries</strong> across four countries, delivering essential meals, food baskets, and medical support. From life-saving surgeries to long-term community health, the effort strengthens lives and builds lasting impact.</p>
                 
                 <a href="#stories" style="color: #000000; text-decoration: underline; font-weight: 600;">Discover the success stories behind CZ's charity work</a> and read the <a href="#letter" style="color: #000000; text-decoration: underline; font-weight: 600;">thanks letter from UTU BORA community</a>.</p>
             </div>
@@ -1084,26 +1226,28 @@
             <h2>Impact in Sudan: Fighting Famine in Crisis <img src="https://flagcdn.com/w40/sd.png" alt="Sudan Flag" class="flag-icon"></h2>
             <div class="country-section">
                 <div class="country-content">
-                    <div class="country-text">
-                    <p><strong>10</strong> Emergency Response Rooms (ERRs) were established in South Kordofan, Sudan as community-led hubs providing food, medical aid, and essential care to families displaced by conflict. Operated by local volunteers, these kitchens deliver life-saving food baskets to women, children, and vulnerable communities facing famine in a war-torn region.</p>
+                    <div class="country-left">
+                        <div class="country-text">
+                            <p><strong>10</strong> Emergency Response Rooms (ERRs) were established in South Kordofan, Sudan as community-led hubs providing food, medical aid, and essential care to families displaced by conflict. Operated by local volunteers, these kitchens deliver life-saving food baskets to women, children, and vulnerable communities facing famine in a war-torn region.</p>
+                        </div>
+                        
+                        <div class="stats-inline">
+                            <div class="stat-card-small">
+                                <span class="stat-number-small">33,200</span>
+                                <span class="stat-label-small">Beneficiaries</span>
+                            </div>
+                            <div class="stat-card-small">
+                                <span class="stat-number-small">6,340</span>
+                                <span class="stat-label-small">Families</span>
+                            </div>
+                            <div class="stat-card-small">
+                                <span class="stat-number-small">10</span>
+                                <span class="stat-label-small">Reopened ERRs</span>
+                            </div>
+                        </div>
                     </div>
                     <div class="country-image">
                         <img src="static/sudan.png" alt="Sudan Impact">
-                    </div>
-                </div>
-                
-                <div class="stats">
-                    <div class="stat-card">
-                        <span class="stat-number">33,200</span>
-                        <span class="stat-label">Beneficiaries</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-number">6,340</span>
-                        <span class="stat-label">Families</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-number">10</span>
-                        <span class="stat-label">Reopened ERRs</span>
                     </div>
                 </div>
             </div>
