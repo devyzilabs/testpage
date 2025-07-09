@@ -57,13 +57,13 @@
 
         .header .quote {
             font-family: 'Times New Roman', Times, serif;
-            font-size: 1.18rem;
+            font-size: 1.01rem;
             color: #000000;
             font-style: italic;
             border-left: 2px solid #000000;
             padding-left: 20px;
             margin: 8px auto 0;
-            max-width: 800px;
+            max-width: 850px;
             font-weight: 400;
             white-space: nowrap;
             overflow: hidden;
@@ -1076,7 +1076,6 @@
             }
         }
 
-        /* 为iPhone 16等小屏幕设备添加专门的媒体查询 */
         @media (max-width: 480px) {
             .container {
                 padding: 10px;
@@ -1138,7 +1137,6 @@
             }
         }
 
-        /* 为极小屏幕（小于360px）的设备 */
         @media (max-width: 360px) {
             .country-nav {
                 grid-template-columns: 1fr;
@@ -1163,7 +1161,7 @@
             <h1>CZ's Philanthropic Impact</h1>
             <p class="charity-subtitle">"Code can scale. Empathy must too." — CZ</p>
             <div class="quote">
-                Over <strong>69,360</strong> lives impacted in Sudan, Kenya, Thailand, and Myanmar. And we're just getting started.
+                Oct 2024, till June 2025, over <strong>69,360</strong> lives impacted in Sudan, Kenya, Thailand, and Myanmar. And we're just getting started.
             </div>
         </header>
 
@@ -1182,8 +1180,6 @@
             </div>
             <div class="highlight-box">
                 <p>CZ's impact has reached over <strong>69,360 beneficiaries</strong> across four countries, delivering essential meals, food baskets, and medical support. From life-saving surgeries to long-term community health, the effort strengthens lives and builds lasting impact.</p>
-
-
                 <br>
                 
                 <a href="#stories" style="color: #000000; text-decoration: underline; font-weight: 600;">Discover the success stories behind CZ's charity work</a> and read the <a href="#letter" style="color: #000000; text-decoration: underline; font-weight: 600;">thank-you letter from UTU BORA community</a>.</p>
@@ -1504,7 +1500,6 @@
             </div>
         </section>
 
-        <!-- Modal for image zoom -->
         <div id="imageModal" class="modal" onclick="closeModal()">
             <span class="close" onclick="closeModal()">&times;</span>
             <img class="modal-content" id="modalImage">
@@ -1546,7 +1541,6 @@
             observer.observe(el);
         });
 
-        // Modal functions for image zoom
         function openModal(element) {
             const modal = document.getElementById('imageModal');
             const modalImg = document.getElementById('modalImage');
@@ -1556,7 +1550,6 @@
             modalImg.src = img.src;
             modalImg.alt = img.alt;
             
-            // Prevent body scroll when modal is open
             document.body.style.overflow = 'hidden';
         }
 
@@ -1564,11 +1557,9 @@
             const modal = document.getElementById('imageModal');
             modal.style.display = 'none';
             
-            // Restore body scroll
             document.body.style.overflow = 'auto';
         }
 
-        // Close modal when pressing ESC key
         document.addEventListener('keydown', function(event) {
             if (event.key === 'Escape') {
                 closeModal();
